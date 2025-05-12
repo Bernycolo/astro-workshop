@@ -1,0 +1,8 @@
+---
+interface Props {
+  title: string;
+}
+const { title, image, rating, releaseDate, description } =
+  Astro.props as TopMovieCardProps;
+const formattedRating = rating.toFixed(1);
+---

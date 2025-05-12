@@ -1,21 +1,22 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
     <title>Astro Workshop</title>
+    <ClientRouter />
   </head>
-  <body class="flex flex-col gap-2">
-    <header class="bg-slate-800 px-2 py-4">
-      <a class="text-white text-2xl font-bold" href="/">Astro Workshop</a>
+  <body class='flex flex-col gap-2'>
+    <header class='bg-slate-800 px-2 py-4'>
+      <a class='text-white text-2xl font-bold' href='/'>Astro Workshop</a>
     </header>
-    <main class="p-4">
+    <main class='p-4'>
       <slot />
     </main>
   </body>

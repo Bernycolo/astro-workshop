@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { render } from 'astro:content';
+
+export const getStaticPaths = (async () => {
+  const movies = await getCollection('movies');
+
+  return movies.map((movie) => ({
+    params: { slug: movie.slug },
+    props: {
+      movie,
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { movie } = Astro.props;
+
+const { date, director, image, title } = movie.data;
+
+const { Content } = await render(movie);
+---
+
+<Layout>
+  <section class='grid grid-cols-[1fr_3fr] gap-4'>
+    <img src={image} alt={title} class='max-h-[300px] aspect-[9/16]' />
+    <article class='flex flex-col gap-1'>
+      <h1 class='text-2xl font-bold'>{title}</h1>
+      <p class='text-gray-500'>{date}</p>
+      <p class='text-gray-700'>Directed by {director}</p>
+    </article>
+  </section>
+  <Content />
+</Layout>

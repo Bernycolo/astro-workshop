@@ -2,7 +2,7 @@
 
 TODO
 
-- [ ] Create movies page
+- [x] Create movies page
 - [ ] Create movies collection
 - [ ] Create TopMovieCard component
 - [ ] Create TopMoviesList component
